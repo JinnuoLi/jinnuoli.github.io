@@ -84,6 +84,22 @@
       </ul>
     </section>
 
+    <section id="service">
+      <h2>Academic Service</h2>
+      <ul class="pub-list">
+        <li><strong>External Reviewer</strong>, IACR Communications in Cryptology, 2026.</li>
+      </ul>
+    </section>
+
+    <section id="misc">
+      <h2>Misc</h2>
+      <p>I identified and reported the following vulnerabilities in candidates submitted to the NGCC competition:</p>
+      <ul class="pub-list">
+        <li><strong>Amoeba: incomplete FO ciphertext verification.</strong> The Fujisaki&ndash;Okamoto check compares only every fourth ciphertext byte, enabling chosen-ciphertext key recovery when a plaintext-checking oracle is available. <a href="https://ngcc.dev/reports/kem-02.html#kem-02-1-the-fo-check-compares-only-every-fourth-ciphertext-byte" target="_blank" rel="noopener">Report (September 2026)</a></li>
+        <li><strong>Lore: BCH decoding timing side channel.</strong> Secret-dependent timing in the BCH decoder enables key recovery. I reported full recovery of the Lore-L2 secret key on an STM32F4 using decapsulation timing measurements. <a href="https://ngcc.dev/reports/kem-19.html#kem-19-3-bch-decoding-timing-leaks-lore-secret-coefficients" target="_blank" rel="noopener">Report (October 2026)</a></li>
+      </ul>
+    </section>
+
   </main>
 </div>
 
