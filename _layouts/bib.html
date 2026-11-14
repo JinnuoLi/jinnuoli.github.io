@@ -1,0 +1,36 @@
+---
+---
+<article class="row" id="{{ key | escape }}" aria-labelledby="{{ key | escape }}-title">
+  <div class="col col-sm-2 abbr">
+    <abbr class="badge rounded">{{ entry.abbr | escape }}</abbr>
+  </div>
+  <div class="col-sm-10">
+    <div class="title" id="{{ key | escape }}-title">{{ entry.title | escape }}</div>
+    <div class="author">
+      {%- for author in entry.author_array -%}
+        {%- unless forloop.first -%}
+          {%- if forloop.last and forloop.length == 2 -%}
+            {{ ' and ' }}
+          {%- elsif forloop.last -%}
+            {{ ', and ' }}
+          {%- else -%}
+            {{ ', ' }}
+          {%- endif -%}
+        {%- endunless -%}
+        {%- capture name -%}{{ author.first }} {{ author.last }}{%- endcapture -%}
+        {%- if site.scholar.first_name contains author.first and site.scholar.last_name contains author.last -%}
+          <em>{{ name | escape }}</em>
+        {%- else -%}
+          {{ name | escape }}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="periodical"><time datetime="{{ entry.year | escape }}">{{ entry.year | escape }}</time> · {{ entry.note | escape }}</div>
+    {%- if entry.bibtex %}
+      <details class="bibtex">
+        <summary>BibTeX</summary>
+        <pre><code>{{ entry.bibtex | escape }}</code></pre>
+      </details>
+    {%- endif %}
+  </div>
+</article>

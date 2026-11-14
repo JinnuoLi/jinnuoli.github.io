@@ -1,0 +1,29 @@
+title: Jinnuo Li (李金诺)
+url: https://jinnuoli.github.io
+baseurl: ""
+description: Jinnuo Li's research in post-quantum cryptography, hardware security, and side-channel attacks at Shandong University.
+email: lijinnuo89@gmail.com
+scholar_url: https://scholar.google.com/citations?user=IEooTrsAAAAJ&hl=en
+plugins:
+  - jekyll-scholar
+include: [_pages]
+
+scholar:
+  source: _bibliography
+  bibliography: papers.bib
+  bibliography_template: bib
+  first_name: [Jinnuo]
+  last_name: [Li]
+  sort_by: none
+  bibtex_skip_fields: [abbr, selected]
+
+exclude:
+  - index.html
+  - publications
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - jemdoc.css
+  - cv/aa
+  - photos/aa
+  - vendor
